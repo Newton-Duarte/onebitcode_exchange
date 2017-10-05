@@ -1,5 +1,5 @@
 $(document).ready ->
-  $('form').submit ->
+  $('form').keyup ->
     if $('form').attr('action') == '/exchange'
       $.ajax '/exchange',
           type: 'POST'

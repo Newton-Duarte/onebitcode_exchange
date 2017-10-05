@@ -17,3 +17,27 @@
 //= require tether
 //= require bootstrap
 //= require_tree .
+
+$(document).ready(function($) {
+  function flipCurrency() {
+
+    var val1 = $("#currency option:selected").val();
+    var text1 = $("#currency option:selected").text();
+
+    var val2 = $("#currency_destination option:selected").val();
+    var text2 = $("#currency_destination option:selected").text();
+
+    $("#currency option:selected").val(val2);
+    $("#currency option:selected").text(text2);
+
+    $("#currency_destination option:selected").val(val1);
+    $("#currency_destination option:selected").text(text1);
+
+  }
+
+  $("#trocar").click(function(event) {
+    flipCurrency();
+    event.preventDefault();
+  });
+
+});
